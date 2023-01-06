@@ -8,8 +8,6 @@ export interface IRedisModuleOptions {
 }
 
 export type RedisAsyncModuleOptions = {
-  useFactory: (
-    ...args: any[]
-  ) => Promise<IRedisModuleOptions> | IRedisModuleOptions;
+  useFactory: (...args: any[]) => Promise<IRedisModuleOptions> | IRedisModuleOptions;
 } & Pick<ModuleMetadata, 'imports'> &
   Pick<FactoryProvider, 'inject'>;

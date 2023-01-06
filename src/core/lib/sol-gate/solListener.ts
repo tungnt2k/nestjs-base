@@ -148,8 +148,8 @@ export class SolListener {
       }
     });
 
-    const time = setTimeout(() => {
-      connection.removeAccountChangeListener(id);
+    const time = setTimeout(async () => {
+      await connection.removeAccountChangeListener(id);
       this.monitorIntervalIds.delete(ata.toBase58());
       this.monitorList.delete(ata.toBase58());
       this.event.emit('monitorAccExpired', mnt, ata.toBase58());

@@ -9,11 +9,7 @@ import type { RedisAsyncModuleOptions } from './redis.interface';
 
 @Module({})
 export class IORedisModule {
-  static async registerAsync({
-    useFactory,
-    imports,
-    inject,
-  }: RedisAsyncModuleOptions): Promise<DynamicModule> {
+  static async registerAsync({ useFactory, imports, inject }: RedisAsyncModuleOptions): Promise<DynamicModule> {
     const redisProvider = {
       provide: IORedisKey,
       useFactory: async (...args: any) => {
