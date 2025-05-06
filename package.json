@@ -23,8 +23,7 @@
     "migration:create": "npm run typeorm -- migration:create",
     "migration:generate": "npm run typeorm -- migration:generate libs/database/src/migrations/$npm_config_name",
     "migration:run": "npm run typeorm -- migration:run",
-    "migration:revert": "npm run typeorm -- migration:revert",
-    "prepare": "husky install"
+    "migration:revert": "npm run typeorm -- migration:revert"
   },
   "dependencies": {
     "@bull-board/api": "^6.2.4",
@@ -99,7 +98,6 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-simple-import-sort": "^12.1.0",
-    "husky": "^8.0.0",
     "jest": "^29.5.0",
     "lint-staged": "^15.2.5",
     "prettier": "^3.2.5",
@@ -141,11 +139,6 @@
       "^@app/common(|/.*)$": "<rootDir>/libs/common/src/$1",
       "^@app/ws-adapter(|/.*)$": "<rootDir>/libs/ws-adapter/src/$1",
       "^@app/pino-logger(|/.*)$": "<rootDir>/libs/pino-logger/src/$1"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
