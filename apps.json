@@ -1,13 +1,13 @@
 {
   "apps": [
     {
-      "name": "NestJS API",
-      "script": "./dist/src/main.js",
+      "name": "Public API",
+      "script": "./dist/apps/public-api/main.js",
       "watch": false,
       "ignore_watch": ["node_modules", "logs"],
       "instances": 1,
       "exec_mode": "cluster",
-      "max_memory_restart": "500M"
+      "max_memory_restart": "1024M"
     }
   ]
 }

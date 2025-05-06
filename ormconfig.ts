@@ -1,27 +1,18 @@
-import * as dotenv from 'dotenv';
-import path from 'path';
+import { config } from 'dotenv';
+import { DataSource } from 'typeorm';
 
-dotenv.config();
+config();
 
-const entityPath = path.join(__dirname, 'src/core/lib/database/entities/**/*.entity.ts');
-const migrationPath = path.join(__dirname, 'src/core/lib/database/migrations/*.ts');
-
-module.exports = {
+export default new DataSource({
   type: 'postgres',
   host: process.env.POSTGRES_HOST,
-  port: process.env.POSTGRES_PORT,
+  port: parseInt(process.env.POSTGRES_PORT || '', 10),
   username: process.env.POSTGRES_USER,
   password: process.env.POSTGRES_PASS,
   database: process.env.POSTGRES_DB,
+  logging: Boolean(process.env.POSTGRES_LOG || 0),
   synchronize: false,
-  logging: false,
-  entities: [entityPath],
-  migrations: [migrationPath],
-  cli: {
-    entitiesDir: 'src/core/lib/database/entities',
-    migrationsDir: 'src/core/lib/database/migrations',
-    seeds: ['src/core/lib/database/seeds/**/*{.ts,.js}'],
-    factories: ['src/core/lib/database/factories/**/*{.ts,.js}'],
-  },
-  seeds: ['src/core/lib/database/seeds/**/*{.ts,.js}'],
-};
+  migrationsTableName: 'migrations',
+  migrations: ['libs/database/src/migrations/**/*{.ts,.js}'],
+  entities: ['*.entity{.ts,.js}'],
+});

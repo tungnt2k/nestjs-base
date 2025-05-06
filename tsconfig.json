@@ -1,13 +1,12 @@
 {
   "compilerOptions": {
-    "esModuleInterop": true,
     "module": "commonjs",
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "es2017",
+    "target": "ES2021",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
@@ -18,14 +17,49 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
-    "typeRoots": ["./src/types"],
     "paths": {
-      "app": ["app"],
-      "app/*": ["app/*"],
-      "common": ["common"],
-      "common/*": ["common/*"],
-      "core": ["core"],
-      "core/*": ["core/*"]
+      "@app/database": [
+        "libs/database/src"
+      ],
+      "@app/database/*": [
+        "libs/database/src/*"
+      ],
+      "@app/otp": [
+        "libs/otp/src"
+      ],
+      "@app/otp/*": [
+        "libs/otp/src/*"
+      ],
+      "@app/redis": [
+        "libs/redis/src"
+      ],
+      "@app/redis/*": [
+        "libs/redis/src/*"
+      ],
+      "@app/swagger": [
+        "libs/swagger/src"
+      ],
+      "@app/swagger/*": [
+        "libs/swagger/src/*"
+      ],
+      "@app/common": [
+        "libs/common/src"
+      ],
+      "@app/common/*": [
+        "libs/common/src/*"
+      ],
+      "@app/ws-adapter": [
+        "libs/ws-adapter/src"
+      ],
+      "@app/ws-adapter/*": [
+        "libs/ws-adapter/src/*"
+      ],
+      "@app/pino-logger": [
+        "libs/pino-logger/src"
+      ],
+      "@app/pino-logger/*": [
+        "libs/pino-logger/src/*"
+      ],
     }
   }
 }
