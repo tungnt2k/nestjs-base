@@ -4,15 +4,9 @@ export default () => ({
     api: {
       port: +process.env.HTTP_PORT || 3000,
     },
-    admin: {
-      port: +process.env.ADMIN_HTTP_PORT || 3006,
-    },
     logger: {
       log_level: process.env.LOG_LEVEL,
     },
-    clientUrl: process.env.CLIENT_URL,
-    serverUrl: process.env.SERVER_URL,
-    systemImage: process.env.SYSTEM_IMAGE,
   },
   swagger: {
     server: process.env.SWAGGER_SERVER,

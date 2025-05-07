@@ -34,3 +34,7 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           tags: ghcr.io/tungnt2k/nestjs-base:latest
+
+      - name: Trigger Portainer Webhook
+        run: |
+          curl -X POST https://portainer.tristann2k.xyz/api/webhooks/e14f9289-5176-4131-beb0-9deb7b47455f
